@@ -40,6 +40,8 @@ public class Importacion {
         guardarEnJson(archivo);
     }
 
+
+    // Guardar en base de datos
     private void guardarEnBaseDeDatos(String tabla) {
         try (Connection con = DriverManager.getConnection("jdbc:mariadb://localhost:3306/selvindb", "selvindb", "SHAN1985")) {
             for (Producto producto : productos) {
@@ -66,6 +68,7 @@ public class Importacion {
         }
     }
 
+    // Guardar en archivo Json
     private void guardarEnJson(String archivo) {
         Gson gson = new Gson();
         try (FileWriter escritor = new FileWriter(archivo)) {

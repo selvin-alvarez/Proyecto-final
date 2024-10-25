@@ -7,7 +7,8 @@ public class ProductoImportacion extends Producto {
         super(id, nombre, precio, cantidad);
         this.estado = estado;
     }
-
+    
+    // Getters y Setters
     public String getEstado() {
         return estado;
     }
@@ -18,6 +19,6 @@ public class ProductoImportacion extends Producto {
 
     @Override
     public boolean esImportado() {
-        return true; // Ya que es un producto de importación
+        return true; // Es un producto de importación
     }
 }

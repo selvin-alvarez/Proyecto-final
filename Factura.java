@@ -3,13 +3,17 @@ package miProyectoFinal;
 import java.util.List;
 
 public class Factura {
+	
+	// Atributos
     private String cliente;
     private String direccion;
     private String nit;
     private String fecha;
     private List<Producto> productos;
     private double total;
-
+    
+    
+    // Constructor
     public Factura(String cliente, String direccion, String nit, String fecha, List<Producto> productos, double total) {
         this.cliente = cliente;
         this.direccion = direccion;

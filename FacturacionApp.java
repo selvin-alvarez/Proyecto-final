@@ -16,6 +16,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class FacturacionApp {
+	
+	// Atributos
     private JFrame frame;
     private JTextField clienteField, direccionField, nitField, fechaField;
     private JTextArea productosArea;
@@ -42,6 +44,7 @@ public class FacturacionApp {
         dataPanel.add(titleLabel);
         dataPanel.add(Box.createRigidArea(new Dimension(0, 20)));
 
+        // Datos del Cliente
         dataPanel.add(crearLabel("Nombre del Cliente:"));
         clienteField = new JTextField(20);
         dataPanel.add(clienteField);
@@ -63,7 +66,7 @@ public class FacturacionApp {
         JScrollPane scrollPane = new JScrollPane(productosArea);
         dataPanel.add(crearLabel("Productos:"));
         dataPanel.add(scrollPane);
-
+        
         calcularButton = crearBoton("Calcular Total");
         guardarButton = crearBoton("Guardar Factura");
 
@@ -124,6 +127,7 @@ public class FacturacionApp {
         return button;
     }
 
+    // Total factura
     private void calcularTotalDesdeDB() {
         total = 0;
         productosArea.setText("");
@@ -148,7 +152,8 @@ public class FacturacionApp {
                             return esImportado;
                         }
                     };
-
+                    
+                    // Productos
                     productos.add(producto);
                     productosArea.append("ID: " + producto.getId() + "\n");
                     productosArea.append("Nombre: " + producto.getNombre() + "\n");
@@ -167,6 +172,7 @@ public class FacturacionApp {
         inventario.getProductos().addAll(productos);
     }
 
+    // Guardar factura en base de datos
     private void guardarFactura() {
         String cliente = clienteField.getText();
         String direccion = direccionField.getText();
@@ -191,6 +197,7 @@ public class FacturacionApp {
         }
     }
 
+    // guardar factra en archivo json
     private void guardarFacturaEnJson(String cliente, String direccion, String nit, String fecha) {
         Gson gson = new Gson();
         Factura factura = new Factura(cliente, direccion, nit, fecha, new ArrayList<>(), total);

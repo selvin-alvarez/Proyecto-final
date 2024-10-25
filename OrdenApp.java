@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class OrdenApp {
+	
+	// Atributos
     private JFrame frame;
     private JTextField idField, nombreField, precioField, cantidadField;
     private JCheckBox esImportadoBox;
@@ -116,6 +118,8 @@ public class OrdenApp {
         return button;
     }
 
+    
+    // Limpiar
     private void limpiarCampos() {
         idField.setText("");
         nombreField.setText("");

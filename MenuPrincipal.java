@@ -48,7 +48,7 @@ public class MenuPrincipal {
         buttonPanel.add(Box.createRigidArea(new Dimension(0, 10)));
         buttonPanel.add(facturacionButton);
 
-        // Configurar GridBagConstraints
+        // Configurar GridBagConstraints para centrado
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -122,7 +122,8 @@ public class MenuPrincipal {
         });
         return button;
     }
-
+    
+    // Menú Principal
     public static void main(String[] args) {
         new MenuPrincipal();
     }

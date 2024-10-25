@@ -19,7 +19,7 @@ public class Inventario {
         return productos;
     }
 
-    // Método para guardar en la base de datos
+    // Guardar en la base de datos
     public void guardarEnBaseDeDatos(String tabla) {
         try (Connection con = DriverManager.getConnection("jdbc:mariadb://localhost:3306/selvindb", "selvindb", "SHAN1985")) {
             for (Producto producto : productos) {
@@ -39,7 +39,7 @@ public class Inventario {
         }
     }
 
-    // Método para guardar en un archivo JSON
+    // Guardar en un archivo JSON
     public void guardarEnJson(String archivo) {
         Gson gson = new Gson();
         try (FileWriter escritor = new FileWriter(archivo)) {
@@ -52,7 +52,7 @@ public class Inventario {
         }
     }
 
-    // Método para guardar en la base de datos con opción de modificar productos
+    // Guardar en la base de datos con opción de modificar productos
     public void guardarOrdenVentaEnBaseDeDatos() {
         try (Connection con = DriverManager.getConnection("jdbc:mariadb://localhost:3306/selvindb", "selvindb", "SHAN1985")) {
             for (Producto producto : productos) {
@@ -74,7 +74,7 @@ public class Inventario {
         }
     }
 
-    // Método para guardar orden de venta en un archivo JSON
+    // Guardar orden de venta en un archivo JSON
     public void guardarOrdenVentaEnJson() {
         Gson gson = new Gson();
         try (FileWriter escritor = new FileWriter("orden_venta.json")) {

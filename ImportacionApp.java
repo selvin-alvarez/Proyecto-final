@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ImportacionApp {
+	
+	// Atributos
     private JFrame frame;
     private JTextField idField, nombreField, estadoField, cantidadField;
     private JButton agregarButton, modificarButton, eliminarButton, guardarButton;
@@ -162,6 +164,7 @@ public class ImportacionApp {
         return button;
     }
 
+    // Limpiar
     private void limpiarCampos() {
         idField.setText("");
         nombreField.setText("");
